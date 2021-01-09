@@ -39,10 +39,17 @@ Route::get('/insert', function () {
 
 Route::get('/updateaddress',function (){
 
+    $address = Address::find(1);
+
+    $address->address = '18 Grin st. Updated2';
+
+    $address ->save();
+});
+
+Route::get('/deleteaddress',function (){
+
     $user = User::find(1);
 
-    
-
-
+    return $user->address->delete();
 
 });
