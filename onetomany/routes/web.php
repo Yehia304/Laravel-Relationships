@@ -48,12 +48,39 @@ Route::get('/user/add/address',function (){
 //});
 Route::get('/user/address/update',function (){
 
-    $address = Address::find(3);
+   $user= User::find(1);
 
-    $address->address = 'New edited address';
+   //return $user->addresses;
 
-    $address->save();
+   foreach ($user->addresses as $address){
+
+       $address->update(['address'=> 'newly updated address']);
+
+   }
+
+
+
+
+
+
+
+//
+//       foreach($address->address as $add){
+//
+//           $add = 'New address';
+//           $add ->save();
+//       }
+
 });
+
+//Route::get('/user/address/update',function (){
+//
+//    $address = Address::find(3);
+//
+//    $address->address = 'New edited address';
+//
+//    $address->save();
+//});
 
 Route::get('/user/address/delete',function (){
 
