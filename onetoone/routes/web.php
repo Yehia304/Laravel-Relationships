@@ -54,3 +54,10 @@ Route::get('/deleteaddress',function (){
 
 });
 
+Route::get('/deleteYehi',function (){
+
+    $user = User::find(2);
+
+    return $user->address->delete();
+
+});
